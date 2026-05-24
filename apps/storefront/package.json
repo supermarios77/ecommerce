@@ -1,9 +1,9 @@
 {
-  "name": "@dtc/storefront",
+  "name": "@mrcricket/storefront",
   "version": "1.0.3",
   "private": true,
   "author": "supermarios77",
-  "description": "Next.js Storefront powered by Medusa V2",
+  "description": "MR Cricket - Premium cricket equipment store powered by Medusa V2",
   "keywords": [
     "medusa-storefront"
   ],

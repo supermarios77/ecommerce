@@ -6,9 +6,9 @@ import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
 export const metadata: Metadata = {
-  title: "Medusa Store",
+  title: "MR Cricket",
   description:
-    "Discover curated collections and premium products for the modern lifestyle.",
+    "MR Cricket - Premium cricket equipment store - bats, balls, pads, gloves, and gear for every level of player.",
 }
 
 export default async function Home(props: {

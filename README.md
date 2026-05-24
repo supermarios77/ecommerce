@@ -38,15 +38,16 @@
   </a>
 </p>
 
-# Medusa Store
+# MR Cricket
 
-A production-ready monorepo for direct-to-consumer ecommerce stores powered by Medusa and Next.js. Includes a fully featured storefront with product browsing, cart, checkout, customer accounts, and order management.
+A production-ready monorepo for cricket equipment stores powered by Medusa and Next.js. Includes a fully featured storefront with product browsing, cart, checkout, customer accounts, and order management.
 
 ## Features
 
 - All of [Medusa's commerce features](https://docs.medusajs.com/resources/commerce-modules)
+- Cricket equipment catalog with bats, balls, protective gear, and accessories
 - Multi-region support with automatic country detection
-- Product catalog with variant selection
+- Product catalog with variant selection (bat sizes, ball types, pad sizes)
 - Cart with promotion codes
 - Multi-step checkout with shipping and payment
 - Customer accounts with order history and address management

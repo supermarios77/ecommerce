@@ -10,13 +10,13 @@ const Hero = () => {
             level="h1"
             className="text-4xl md:text-5xl leading-tight text-ui-fg-base font-semibold tracking-tight"
           >
-            Discover Your Style
+            Premium Cricket Equipment
           </Heading>
           <Heading
             level="h2"
             className="text-xl md:text-2xl leading-relaxed text-ui-fg-subtle font-normal"
           >
-            Curated collections for the modern lifestyle
+            Bats, balls, pads, and gear for every level
           </Heading>
         </span>
         <LocalizedClientLink href="/store">
