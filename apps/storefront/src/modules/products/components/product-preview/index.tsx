@@ -29,7 +29,7 @@ export default async function ProductPreview({
 
   return (
     <LocalizedClientLink href={`/products/${product.handle}`} className="group">
-      <div data-testid="product-wrapper">
+      <div data-testid="product-wrapper" className="transition-transform duration-300 group-hover:-translate-y-1">
         <Thumbnail
           thumbnail={product.thumbnail}
           images={product.images}
@@ -37,7 +37,7 @@ export default async function ProductPreview({
           isFeatured={isFeatured}
         />
         <div className="flex txt-compact-medium mt-4 justify-between">
-          <Text className="text-ui-fg-subtle" data-testid="product-title">
+          <Text className="text-ui-fg-subtle group-hover:text-ui-fg-base transition-colors duration-200" data-testid="product-title">
             {product.title}
           </Text>
           <div className="flex items-center gap-x-2">
