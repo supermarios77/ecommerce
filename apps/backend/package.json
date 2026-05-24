@@ -1,7 +1,7 @@
 {
-  "name": "@dtc/backend",
+  "name": "@mrcricket/backend",
   "version": "0.0.1",
-  "description": "Medusa backend for ecommerce store",
+  "description": "Backend for MR Cricket equipment store",
   "author": "supermarios77",
   "license": "MIT",
   "keywords": [

@@ -31,7 +31,7 @@ export default async function Nav() {
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase transition-colors duration-200"
               data-testid="nav-store-link"
             >
-              Medusa Store
+              MR Cricket
             </LocalizedClientLink>
           </div>
 

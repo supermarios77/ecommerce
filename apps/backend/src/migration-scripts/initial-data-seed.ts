@@ -43,8 +43,8 @@ export default async function initial_data_seed({
     input: {
       salesChannelsData: [
         {
-          name: "Default Sales Channel",
-          description: "Created by Medusa",
+          name: "MR Cricket Channel",
+          description: "MR Cricket equipment sales channel",
         },
       ],
     },
@@ -77,7 +77,7 @@ export default async function initial_data_seed({
     input: {
       stores: [
         {
-          name: "Default Store",
+          name: "MR Cricket",
           supported_currencies: [
             {
               currency_code: "eur",
@@ -302,19 +302,23 @@ export default async function initial_data_seed({
     input: {
       product_categories: [
         {
-          name: "Shirts",
+          name: "Cricket Bats",
           is_active: true,
         },
         {
-          name: "Sweatshirts",
+          name: "Cricket Balls",
           is_active: true,
         },
         {
-          name: "Pants",
+          name: "Protective Gear",
           is_active: true,
         },
         {
-          name: "Merch",
+          name: "Clothing",
+          is_active: true,
+        },
+        {
+          name: "Accessories",
           is_active: true,
         },
       ],
@@ -325,181 +329,294 @@ export default async function initial_data_seed({
     input: {
       products: [
         {
-          title: "Medusa T-Shirt",
+          title: "English Willow Cricket Bat",
           category_ids: [
-            categoryResult.find((cat) => cat.name === "Shirts")!.id,
+            categoryResult.find((cat) => cat.name === "Cricket Bats")!.id,
           ],
           description:
-            "Reimagine the feeling of a classic T-shirt. With our cotton T-shirts, everyday essentials no longer have to be ordinary.",
-          handle: "t-shirt",
-          weight: 400,
+            "Premium Grade 1 English willow cricket bat, perfect for professional players. Excellent balance and power with traditional sweet spot.",
+          handle: "english-willow-cricket-bat",
+          weight: 1200,
           status: ProductStatus.PUBLISHED,
           shipping_profile_id: shippingProfile.id,
           images: [
             {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
-            },
-            {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-back.png",
-            },
-            {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-white-front.png",
-            },
-            {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-white-back.png",
+              url: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&q=80",
             },
           ],
           options: [
             {
               title: "Size",
-              values: ["S", "M", "L", "XL"],
+              values: ["Size 5", "Size 6", "Full Size"],
+            },
+            {
+              title: "Grade",
+              values: ["Grade 1", "Grade 2", "Grade 3"],
+            },
+          ],
+          variants: [
+            {
+              title: "Size 5 / Grade 1",
+              sku: "BAT-S5-G1",
+              options: {
+                Size: "Size 5",
+                Grade: "Grade 1",
+              },
+              prices: [
+                {
+                  amount: 299,
+                  currency_code: "eur",
+                },
+                {
+                  amount: 329,
+                  currency_code: "usd",
+                },
+              ],
+            },
+            {
+              title: "Size 6 / Grade 1",
+              sku: "BAT-S6-G1",
+              options: {
+                Size: "Size 6",
+                Grade: "Grade 1",
+              },
+              prices: [
+                {
+                  amount: 329,
+                  currency_code: "eur",
+                },
+                {
+                  amount: 359,
+                  currency_code: "usd",
+                },
+              ],
+            },
+            {
+              title: "Full Size / Grade 1",
+              sku: "BAT-FS-G1",
+              options: {
+                Size: "Full Size",
+                Grade: "Grade 1",
+              },
+              prices: [
+                {
+                  amount: 349,
+                  currency_code: "eur",
+                },
+                {
+                  amount: 379,
+                  currency_code: "usd",
+                },
+              ],
+            },
+            {
+              title: "Full Size / Grade 2",
+              sku: "BAT-FS-G2",
+              options: {
+                Size: "Full Size",
+                Grade: "Grade 2",
+              },
+              prices: [
+                {
+                  amount: 249,
+                  currency_code: "eur",
+                },
+                {
+                  amount: 279,
+                  currency_code: "usd",
+                },
+              ],
+            },
+          ],
+          sales_channels: [
+            {
+              id: defaultSalesChannel.id,
+            },
+          ],
+        },
+        {
+          title: "Leather Cricket Ball",
+          category_ids: [
+            categoryResult.find((cat) => cat.name === "Cricket Balls")!.id,
+          ],
+          description:
+            "Premium leather cricket ball, hand-stitched for professional matches. Excellent shape retention and durability.",
+          handle: "leather-cricket-ball",
+          weight: 160,
+          status: ProductStatus.PUBLISHED,
+          shipping_profile_id: shippingProfile.id,
+          images: [
+            {
+              url: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=800&q=80",
+            },
+          ],
+          options: [
+            {
+              title: "Color",
+              values: ["Red", "White", "Pink"],
+            },
+            {
+              title: "Type",
+              values: ["Match", "Training"],
+            },
+          ],
+          variants: [
+            {
+              title: "Red / Match",
+              sku: "BALL-RED-MATCH",
+              options: {
+                Color: "Red",
+                Type: "Match",
+              },
+              prices: [
+                {
+                  amount: 25,
+                  currency_code: "eur",
+                },
+                {
+                  amount: 28,
+                  currency_code: "usd",
+                },
+              ],
+            },
+            {
+              title: "White / Match",
+              sku: "BALL-WHITE-MATCH",
+              options: {
+                Color: "White",
+                Type: "Match",
+              },
+              prices: [
+                {
+                  amount: 25,
+                  currency_code: "eur",
+                },
+                {
+                  amount: 28,
+                  currency_code: "usd",
+                },
+              ],
+            },
+            {
+              title: "Red / Training",
+              sku: "BALL-RED-TRAINING",
+              options: {
+                Color: "Red",
+                Type: "Training",
+              },
+              prices: [
+                {
+                  amount: 15,
+                  currency_code: "eur",
+                },
+                {
+                  amount: 18,
+                  currency_code: "usd",
+                },
+              ],
+            },
+          ],
+          sales_channels: [
+            {
+              id: defaultSalesChannel.id,
+            },
+          ],
+        },
+        {
+          title: "Batting Pads Set",
+          category_ids: [
+            categoryResult.find((cat) => cat.name === "Protective Gear")!.id,
+          ],
+          description:
+            "Professional-grade batting pads with lightweight design and superior protection. Includes left and right pads with adjustable straps.",
+          handle: "batting-pads-set",
+          weight: 800,
+          status: ProductStatus.PUBLISHED,
+          shipping_profile_id: shippingProfile.id,
+          images: [
+            {
+              url: "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=800&q=80",
+            },
+          ],
+          options: [
+            {
+              title: "Size",
+              values: ["Junior", "Youth", "Senior"],
             },
             {
               title: "Color",
-              values: ["Black", "White"],
+              values: ["Black", "Navy", "White"],
             },
           ],
           variants: [
             {
-              title: "S / Black",
-              sku: "SHIRT-S-BLACK",
+              title: "Junior / Black",
+              sku: "PADS-JUNIOR-BLACK",
               options: {
-                Size: "S",
+                Size: "Junior",
                 Color: "Black",
               },
               prices: [
                 {
-                  amount: 10,
+                  amount: 45,
                   currency_code: "eur",
                 },
                 {
-                  amount: 15,
+                  amount: 50,
                   currency_code: "usd",
                 },
               ],
             },
             {
-              title: "S / White",
-              sku: "SHIRT-S-WHITE",
+              title: "Youth / Black",
+              sku: "PADS-YOUTH-BLACK",
               options: {
-                Size: "S",
-                Color: "White",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "M / Black",
-              sku: "SHIRT-M-BLACK",
-              options: {
-                Size: "M",
+                Size: "Youth",
                 Color: "Black",
               },
               prices: [
                 {
-                  amount: 10,
+                  amount: 55,
                   currency_code: "eur",
                 },
                 {
-                  amount: 15,
+                  amount: 60,
                   currency_code: "usd",
                 },
               ],
             },
             {
-              title: "M / White",
-              sku: "SHIRT-M-WHITE",
+              title: "Senior / Black",
+              sku: "PADS-SENIOR-BLACK",
               options: {
-                Size: "M",
-                Color: "White",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "L / Black",
-              sku: "SHIRT-L-BLACK",
-              options: {
-                Size: "L",
+                Size: "Senior",
                 Color: "Black",
               },
               prices: [
                 {
-                  amount: 10,
+                  amount: 65,
                   currency_code: "eur",
                 },
                 {
-                  amount: 15,
+                  amount: 70,
                   currency_code: "usd",
                 },
               ],
             },
             {
-              title: "L / White",
-              sku: "SHIRT-L-WHITE",
+              title: "Senior / Navy",
+              sku: "PADS-SENIOR-NAVY",
               options: {
-                Size: "L",
-                Color: "White",
+                Size: "Senior",
+                Color: "Navy",
               },
               prices: [
                 {
-                  amount: 10,
+                  amount: 65,
                   currency_code: "eur",
                 },
                 {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "XL / Black",
-              sku: "SHIRT-XL-BLACK",
-              options: {
-                Size: "XL",
-                Color: "Black",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "XL / White",
-              sku: "SHIRT-XL-WHITE",
-              options: {
-                Size: "XL",
-                Color: "White",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
+                  amount: 70,
                   currency_code: "usd",
                 },
               ],
@@ -512,297 +629,100 @@ export default async function initial_data_seed({
           ],
         },
         {
-          title: "Medusa Sweatshirt",
+          title: "Cricket Helmet Pro",
           category_ids: [
-            categoryResult.find((cat) => cat.name === "Sweatshirts")!.id,
+            categoryResult.find((cat) => cat.name === "Protective Gear")!.id,
           ],
           description:
-            "Reimagine the feeling of a classic sweatshirt. With our cotton sweatshirt, everyday essentials no longer have to be ordinary.",
-          handle: "sweatshirt",
-          weight: 400,
+            "Professional cricket helmet with advanced impact protection and ventilation. Meets international safety standards with reinforced grille.",
+          handle: "cricket-helmet-pro",
+          weight: 600,
           status: ProductStatus.PUBLISHED,
           shipping_profile_id: shippingProfile.id,
           images: [
             {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
-            },
-            {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png",
+              url: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&q=80",
             },
           ],
           options: [
             {
               title: "Size",
-              values: ["S", "M", "L", "XL"],
+              values: ["Small", "Medium", "Large"],
+            },
+            {
+              title: "Color",
+              values: ["Black", "Navy", "Red"],
             },
           ],
           variants: [
             {
-              title: "S",
-              sku: "SWEATSHIRT-S",
+              title: "Small / Black",
+              sku: "HELMET-SMALL-BLACK",
               options: {
-                Size: "S",
+                Size: "Small",
+                Color: "Black",
               },
               prices: [
                 {
-                  amount: 10,
+                  amount: 75,
                   currency_code: "eur",
                 },
                 {
-                  amount: 15,
+                  amount: 85,
                   currency_code: "usd",
                 },
               ],
             },
             {
-              title: "M",
-              sku: "SWEATSHIRT-M",
+              title: "Medium / Black",
+              sku: "HELMET-MEDIUM-BLACK",
               options: {
-                Size: "M",
+                Size: "Medium",
+                Color: "Black",
               },
               prices: [
                 {
-                  amount: 10,
+                  amount: 75,
                   currency_code: "eur",
                 },
                 {
-                  amount: 15,
+                  amount: 85,
                   currency_code: "usd",
                 },
               ],
             },
             {
-              title: "L",
-              sku: "SWEATSHIRT-L",
+              title: "Large / Black",
+              sku: "HELMET-LARGE-BLACK",
               options: {
-                Size: "L",
+                Size: "Large",
+                Color: "Black",
               },
               prices: [
                 {
-                  amount: 10,
+                  amount: 75,
                   currency_code: "eur",
                 },
                 {
-                  amount: 15,
+                  amount: 85,
                   currency_code: "usd",
                 },
               ],
             },
             {
-              title: "XL",
-              sku: "SWEATSHIRT-XL",
+              title: "Medium / Navy",
+              sku: "HELMET-MEDIUM-NAVY",
               options: {
-                Size: "XL",
+                Size: "Medium",
+                Color: "Navy",
               },
               prices: [
                 {
-                  amount: 10,
+                  amount: 75,
                   currency_code: "eur",
                 },
                 {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-          ],
-          sales_channels: [
-            {
-              id: defaultSalesChannel.id,
-            },
-          ],
-        },
-        {
-          title: "Medusa Sweatpants",
-          category_ids: [
-            categoryResult.find((cat) => cat.name === "Pants")!.id,
-          ],
-          description:
-            "Reimagine the feeling of classic sweatpants. With our cotton sweatpants, everyday essentials no longer have to be ordinary.",
-          handle: "sweatpants",
-          weight: 400,
-          status: ProductStatus.PUBLISHED,
-          shipping_profile_id: shippingProfile.id,
-          images: [
-            {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
-            },
-            {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-back.png",
-            },
-          ],
-          options: [
-            {
-              title: "Size",
-              values: ["S", "M", "L", "XL"],
-            },
-          ],
-          variants: [
-            {
-              title: "S",
-              sku: "SWEATPANTS-S",
-              options: {
-                Size: "S",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "M",
-              sku: "SWEATPANTS-M",
-              options: {
-                Size: "M",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "L",
-              sku: "SWEATPANTS-L",
-              options: {
-                Size: "L",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "XL",
-              sku: "SWEATPANTS-XL",
-              options: {
-                Size: "XL",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-          ],
-          sales_channels: [
-            {
-              id: defaultSalesChannel.id,
-            },
-          ],
-        },
-        {
-          title: "Medusa Shorts",
-          category_ids: [
-            categoryResult.find((cat) => cat.name === "Merch")!.id,
-          ],
-          description:
-            "Reimagine the feeling of classic shorts. With our cotton shorts, everyday essentials no longer have to be ordinary.",
-          handle: "shorts",
-          weight: 400,
-          status: ProductStatus.PUBLISHED,
-          shipping_profile_id: shippingProfile.id,
-          images: [
-            {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-front.png",
-            },
-            {
-              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-back.png",
-            },
-          ],
-          options: [
-            {
-              title: "Size",
-              values: ["S", "M", "L", "XL"],
-            },
-          ],
-          variants: [
-            {
-              title: "S",
-              sku: "SHORTS-S",
-              options: {
-                Size: "S",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "M",
-              sku: "SHORTS-M",
-              options: {
-                Size: "M",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "L",
-              sku: "SHORTS-L",
-              options: {
-                Size: "L",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
-                },
-              ],
-            },
-            {
-              title: "XL",
-              sku: "SHORTS-XL",
-              options: {
-                Size: "XL",
-              },
-              prices: [
-                {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
+                  amount: 85,
                   currency_code: "usd",
                 },
               ],
