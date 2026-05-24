@@ -17,12 +17,12 @@
   },
   "pnpm": {
     "overrides": {
-      "@types/react": "19.0.5",
-      "@types/react-dom": "19.0.5"
+      "@types/react": "19.1.6",
+      "@types/react-dom": "19.1.6"
     }
   },
   "devDependencies": {
-    "turbo": "^2.0.14",
+    "turbo": "^2.9.14",
     "prettier": "^3.2.5"
   }
 }
