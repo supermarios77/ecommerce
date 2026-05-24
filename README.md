@@ -8,7 +8,7 @@
   </a>
 </p>
 <h1 align="center">
-  Medusa DTC Starter
+  Medusa Store
 </h1>
 
 <h4 align="center">
@@ -38,9 +38,9 @@
   </a>
 </p>
 
-# Medusa DTC Starter
+# Medusa Store
 
-A production-ready monorepo starter for direct-to-consumer ecommerce stores powered by Medusa and Next.js. Includes a fully featured storefront with product browsing, cart, checkout, customer accounts, and order management.
+A production-ready monorepo for direct-to-consumer ecommerce stores powered by Medusa and Next.js. Includes a fully featured storefront with product browsing, cart, checkout, customer accounts, and order management.
 
 ## Features
 
@@ -73,7 +73,7 @@ The fastest way to get started is deploying with [Medusa Cloud](https://cloud.me
 
 ```bash
 git clone https://github.com/medusajs/dtc-starter.git
-cd dtc-starter
+cd ecommerce
 pnpm install
 ```
 
@@ -87,7 +87,7 @@ cp apps/backend/.env.template apps/backend/.env
 
 ```bash
 # Replace with actual database URL, make sure the database exists.
-DATABASE_URL=postgres://postgres:@localhost:5432/medusa-dtc-starter
+DATABASE_URL=postgres://postgres:@localhost:5432/medusa-ecommerce
 ```
 
 4. Run migrations:

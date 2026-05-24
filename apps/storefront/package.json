@@ -2,8 +2,8 @@
   "name": "@dtc/storefront",
   "version": "1.0.3",
   "private": true,
-  "author": "Kasper Fabricius Kristensen <kasper@medusajs.com> & Victor Gerbrands <victor@medusajs.com> (https://www.medusajs.com)",
-  "description": "Next.js Starter to be used with Medusa V2",
+  "author": "supermarios77",
+  "description": "Next.js Storefront powered by Medusa V2",
   "keywords": [
     "medusa-storefront"
   ],
